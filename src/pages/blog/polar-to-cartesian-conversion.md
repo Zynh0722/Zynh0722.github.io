@@ -1,7 +1,7 @@
 ---
-layout: ../../layouts/Blog.astro
+layout: ../../layouts/BlogPost.astro
 title:  Polar to Cartesian Conversions
-date:  March 1st 2022
+pubDate:  Mar 1 2022
 categories: [javascript, math]
 author: Zynh Ludwig
 ---

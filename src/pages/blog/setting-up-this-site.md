@@ -1,6 +1,7 @@
 ---
+layout: ../../layouts/BlogPost.astro
 title:  "Setting up this blog!"
-date:   February 28th 2022
+pubDate:   Feb 28 2022
 categories: [blog, jekyll]
 author: Zynh Ludwig
 ---
