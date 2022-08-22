@@ -42,7 +42,7 @@ And even putting performance aside, regex is complicated, and how a browser inte
 your regex varies fairly widely, so from a compatability perspective indexOf makes the
 most sense as well.
 
-## Great Val, you still haven't shown me any Regex...
+## Great Zynh, you still haven't shown me any Regex...
 
 Alright alright let's look at how we can make some regex. I will use regex literals
 as they are prettier, but just know any of this regex would work with objects too.
