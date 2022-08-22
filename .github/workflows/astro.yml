@@ -1,7 +1,6 @@
 name: Deploy Astro to GitHub Pages
-
     on:
-     # Trigger the workflow every time you push to the `main` branch
+      # Trigger the workflow every time you push to the `main` branch
       push:
         branches: [ main ]
       # Allows you to run this workflow manually from the Actions tab on GitHub.
