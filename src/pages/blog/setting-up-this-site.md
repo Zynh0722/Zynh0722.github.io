@@ -1,10 +1,17 @@
 ---
 layout: ../../layouts/BlogPost.astro
-title:  "Setting up this blog!"
+title:  "Setting up this blog! [Outdated]"
 pubDate:   Feb 28 2022
 categories: [blog, jekyll]
 author: Zynh Ludwig
 ---
+
+## Astro redesign
+
+This page was initially made with github pages' jekyll integration.\
+\
+Overall however I wasn't super happy with this, hopefully I'll have an updated 
+version for this site later!
 
 ## The Sauce
 
