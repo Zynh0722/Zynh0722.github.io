@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPost.astro
 title:  "What is Regex?"
-pubDate:   Mar 13 2022
+pubDate:   Mar 13, 2022
 categories: [javascript, regex]
 author: Zynh Ludwig
 ---
