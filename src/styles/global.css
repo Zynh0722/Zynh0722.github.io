@@ -1,3 +1,10 @@
+@font-face {
+	font-family: 'JetBrainsMono-Regular';
+	src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
 /*
   The CSS in this style tag is based off of Bear Blog's default CSS.
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
@@ -48,12 +55,17 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+pre {
+	padding: 1rem;
+	border-radius: 10px;
+}
 code {
 	padding: 2px 5px;
 	background-color: #f2f2f2;
+	font-family: 'JetBrainsMono-Regular';
 }
-pre {
-	padding: 1rem;
+:not(pre) > code {
+	border-radius: 5px;
 }
 pre > code {
 	all: unset;
