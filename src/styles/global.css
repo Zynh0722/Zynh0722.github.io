@@ -67,7 +67,7 @@ img {
 	height: auto;
 }
 
-pre, code {
+pre, :not(pre) > code {
 	font-family: 'JetBrainsMono-Regular';
 	font-size: 14px;
 	font-variant-ligatures: none;
