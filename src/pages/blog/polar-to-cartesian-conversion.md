@@ -38,7 +38,7 @@ Lets say we want to get the center positions of 20 circles arranged in a circle 
 [Link to sketches code](https://editor.p5js.org/Zynh0722/sketches/d6GHn4dXp)
 
 <iframe style="width:400px; height:450px; overflow:hidden; margin:auto; display:block" scrolling="no" frameborder="  o" src="https://editor.p5js.org/Zynh0722/full/d6GHn4dXp"></iframe>
-**CSS note: to center this iframe I had to explicitly declare `display:block` and use `margin:auto`**
+<div style="display: flex;"><i style="text-align: center">CSS note: to center this iframe I had to explicitly declare <code>display:block</code> and use <code>margin:auto</code></i></div>
 
 All we need to do is divide the number of radians in a circle by 20, to get the angle at each increment evenly spaced apart.
 Then loop through those increments and draw circles.
@@ -65,4 +65,4 @@ Polar coordinates are a powerful tool for converting from Polar coordinates radi
 and y
 
 <img style="margin:auto; display:block;" src="/assets/Polar-Cartesian-Coordinates-Feature.png">
-<emph style="text-align:center; display:block;">Image shamelessly ripped from <a href="https://www.linearmotiontips.com/motion-basics-difference-between-cartesian-and-polar-coordinate-systems/">Linear motion tips</a></emph>
+<i style="text-align:center; display:block;">Image shamelessly ripped from <a href="https://www.linearmotiontips.com/motion-basics-difference-between-cartesian-and-polar-coordinate-systems/">Linear motion tips</a></i>
