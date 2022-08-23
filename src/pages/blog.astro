@@ -2,12 +2,19 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+import sortBy from '@lib/byDate';
+import readTime from '@lib/readTime';
+
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
-const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
-	(a: any, b: any) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
-);
+const posts = (await Astro.glob('./blog/*.{md,mdx}'))
+	.sort(sortBy)
+	.map(p => ({ 
+		post: p,
+		readTime: readTime(p)
+	 }));
 ---
 
 <!DOCTYPE html>
@@ -37,7 +44,7 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 		<main>
 			<content>
 				<ul>
-					{posts.map((post: any) => (
+					{posts.map(({ post, readTime }) => (
 						<li>
 							<time datetime={post.frontmatter.pubDate}>
 								{new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
@@ -45,8 +52,11 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 									month: 'short',
 									day: 'numeric',
 								})}
-							</time>
+							</time> 
 							<a href={post.url}>{post.frontmatter.title}</a>
+							<div class="time-to-read">
+								<time>{readTime.text}</time>
+							</div>
 						</li>
 					))}
 				</ul>
@@ -55,3 +65,16 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 		</main>
 	</body>
 </html>
+<style>
+	.time-to-read {
+		display: flex;
+		justify-content: flex-end; 
+		flex-grow: 1;
+	}
+
+	@media only screen and (max-width: 600px) {
+		.time-to-read {
+			display: none;
+		}
+	}
+</style>

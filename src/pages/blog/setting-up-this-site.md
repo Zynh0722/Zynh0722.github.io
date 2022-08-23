@@ -36,9 +36,9 @@ will also be included in posts.
 
 New posts go in the `_posts` folder with the format `YEAR-MONTH-DAY-title.md`
 
-{% highlight javascript %}
+```js
 console.log('Just an example of how to use code block highlighting');
-{% endhighlight %}
+```
 
 
 ## Final Notes
@@ -51,7 +51,7 @@ interacting with the git repo.
 
 ### Resources
 
-[Jekyll main site](https://jekyllrb.com/)\\
-[Jekyll docs](https://jekyllrb.com/docs/)\\
-[Base Jekyll theme I am using](https://github.com/jekyll/minima)\\
+[Jekyll main site](https://jekyllrb.com/)\
+[Jekyll docs](https://jekyllrb.com/docs/)\
+[Base Jekyll theme I am using](https://github.com/jekyll/minima)\
 [David's post about using jekyll and GH pages to host a blog](https://dfederm.com/creating-a-blog-using-github-pages/)
