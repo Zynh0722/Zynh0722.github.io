@@ -4,7 +4,6 @@
 	font-weight: normal;
 	font-style: normal;
 }
-
 /*
   The CSS in this style tag is based off of Bear Blog's default CSS.
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
@@ -60,6 +59,9 @@ pre, code {
 	font-size: 14px;
 	font-variant-ligatures: none;
 }
+pre:hover, code:hover, canvas:hover {
+	animation: uwu 1s linear infinite;
+}
 pre {
 	padding: 1rem;
 	border-radius: 10px;
@@ -71,6 +73,27 @@ code {
 :not(pre) > code {
 	border-radius: 5px;
 }
+
+@-webkit-keyframes uwu {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes uwu {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
 pre > code {
 	all: unset;
 }
