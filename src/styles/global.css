@@ -1,9 +1,13 @@
+/*
+  Import font for code blocks
+ */
 @font-face {
 	font-family: 'JetBrainsMono-Regular';
 	src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
 	font-weight: normal;
 	font-style: normal;
 }
+
 /*
   The CSS in this style tag is based off of Bear Blog's default CSS.
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
@@ -21,6 +25,7 @@
 	line-height: 1.5;
 	color: #444;
 }
+
 h1,
 h2,
 h3,
@@ -31,72 +36,61 @@ strong,
 b {
 	color: #222;
 }
+
 a {
 	color: #3273dc;
 }
+
 nav a {
 	margin-right: 10px;
 }
+
 textarea {
 	width: 100%;
 	font-size: 16px;
 }
+
 input {
 	font-size: 16px;
 }
+
 content {
 	line-height: 1.6;
 }
+
 table {
 	width: 100%;
 }
+
 img {
 	max-width: 100%;
 	height: auto;
 }
+
 pre, code {
 	font-family: 'JetBrainsMono-Regular';
 	font-size: 14px;
 	font-variant-ligatures: none;
 }
-pre:hover, code:hover, canvas:hover {
-	animation: uwu 1s linear infinite;
-}
+
 pre {
 	padding: 1rem;
 	border-radius: 10px;
 }
+
 code {
 	padding: 2px 5px;
 	background-color: #f2f2f2;
 }
+
 :not(pre) > code {
 	border-radius: 5px;
-}
-
-@-webkit-keyframes uwu {
-	0% {
-		transform: rotate(0deg);
-	}
-
-	100% {
-		transform: rotate(360deg);
-	}
-}
-
-@keyframes uwu {
-	0% {
-		transform: rotate(0deg);
-	}
-
-	100% {
-		transform: rotate(360deg);
-	}
 }
 
 pre > code {
 	all: unset;
 }
+
 blockquote {
 	border: 1px solid #999;
 	color: #222;
