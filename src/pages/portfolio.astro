@@ -1,0 +1,40 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { SITE_TITLE } from "src/config";
+
+const content = {
+    title: SITE_TITLE,
+    description: ""
+}
+
+const mdFiles = await Astro.glob('../data/projects/*.md');
+const headings = mdFiles.map(post => post.frontmatter.title)
+                        .map(title => ({ 
+                            slug: title.replace(' ', '-').toLowerCase(),
+                            title
+                        }));
+
+const posts = mdFiles.map((post, i) => ({
+                post,
+                ...headings[i]
+            }));
+console.log(posts);
+---
+
+<Layout content={content}>
+    <ul>
+        {posts.map(({ title, slug }) => <li>{title} - <a href={`#${slug}`}>jump to</a></li>)}
+    </ul>
+
+    <hr />
+
+    {posts.map(({post, title, slug}) => 
+        <article>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+                <h2 id={slug} style="text-decoration: underline;">{title}</h2>
+                <a href="#">back to top</a>
+            </div>
+            <post.Content />
+        </article>
+    )}
+</Layout>

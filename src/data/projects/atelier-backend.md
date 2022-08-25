@@ -1,8 +1,8 @@
 ---
-title: 'Atelier Frontend'
+title: 'Atelier Backend'
 ---
 
-![Image of the atelier frontend](https://camo.githubusercontent.com/b1b29ac29b4375c47ff5b5314e71c23e4edc551fb339b1f0701754b9a4e8d146/68747470733a2f2f692e696d6775722e636f6d2f684430316575772e676966)
+This hopefully is a more fleshed out doc of SDC
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu risus quis varius quam quisque id diam vel quam. Accumsan sit amet nulla facilisi morbi. Sed blandit libero volutpat sed. Iaculis at erat pellentesque adipiscing. Pulvinar mattis nunc sed blandit libero. Diam vel quam elementum pulvinar etiam non. Porta lorem mollis aliquam ut porttitor leo a diam sollicitudin. Lacus sed turpis tincidunt id aliquet risus. Egestas erat imperdiet sed euismod nisi porta lorem. Elementum nibh tellus molestie nunc non. Volutpat odio facilisis mauris sit amet. Posuere urna nec tincidunt praesent semper feugiat. Molestie ac feugiat sed lectus. Mauris augue neque gravida in fermentum. Congue mauris rhoncus aenean vel elit.
 
