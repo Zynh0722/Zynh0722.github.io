@@ -1,0 +1,45 @@
+---
+import Layout from "./Layout.astro";
+
+
+interface Heading {
+	depth: number,
+	text: string,
+	slug: string
+}
+
+export interface Props {
+	content: {
+		title: string;
+		description: string;
+		updatedDate?: string;
+	}, 
+	headings: [Heading]
+}
+
+const { content, headings } = Astro.props as Props;
+const {
+	title, description, updatedDate 
+} = content;
+
+console.log(headings)
+---
+
+<Layout content={content}>
+	<main>
+		<article>
+			<h1 class="title">{title}</h1>
+			{updatedDate && <div>Last updated on <time>{updatedDate}</time></div>}
+			<hr/>
+            {headings?.filter(h=>h.depth >= 2)
+                    .map(heading => 
+                        <div>
+                            <span>{heading.text}</span>
+                            <a href={`#${heading.slug}`}>Jump to</a>
+                        </div>
+                    )}
+            <hr />
+			<slot />
+		</article>
+	</main>
+</Layout>
