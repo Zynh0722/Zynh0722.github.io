@@ -8,8 +8,10 @@
 	font-style: normal;
 }
 
-html {
-	scroll-behavior: smooth;
+@media screen and (min-width: 640px), (prefers-reduced-motion) {
+	html {
+		scroll-behavior: smooth;
+	}
 }
 
 /*
