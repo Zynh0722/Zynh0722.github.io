@@ -18,12 +18,20 @@ const posts = mdFiles.map((post, i) => ({
                 post,
                 ...headings[i]
             }));
-console.log(posts);
 ---
 
 <Layout content={content}>
-    <ul>
-        {posts.map(({ title, slug }) => <li>{title} - <a href={`#${slug}`}>jump to</a></li>)}
+    <hr />
+
+    <ul class="toc-wrapper">
+        <h2 class="toc-header">Table of Contents</h2>
+        {posts.map(({ title, slug }) => 
+            <li class="toc-title">
+                <a href={`#${slug}`}>
+                    {title}
+                </a>
+            </li>
+        )}
     </ul>
 
     <hr />
@@ -38,3 +46,23 @@ console.log(posts);
         </article>
     )}
 </Layout>
+<style>
+    .toc-wrapper {
+        all: unset;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .toc-header {
+        all: unset;
+        font-size: 1.25em;
+        font-weight: bold;
+        text-decoration: underline;
+        margin-block-end: 0.25em;
+    }
+
+    .toc-title {
+        display: block;
+    }
+</style>
