@@ -11,13 +11,28 @@ const sketch = (p5: P5) => {
 
 	p5.draw = () => {
 		p5.background("white");
-        for (let i = 0; i < 20; i++) {
-			p5.circle(
-				p5.map(i, 0, 20, 15, 585), // Distribute circles across canvas
-				Math.sin((p5.frameCount + (i * 10)) / 20) * 75 + 100, // Offset wave
-				20, // Diameter
+		p5.noFill();
+		p5.strokeWeight(2)
+		p5.beginShape();
+		const points = 100;
+		const frequency = 1000;
+		const amplitude = 75;
+		const speed = 20
+
+		const offset = p5.height / 2;
+        for (let i = 0; i < points; i++) {
+			p5.vertex(
+				p5.map(i, 0, points, 15, 585), 
+				Math.sin((p5.frameCount + i * speed) / points) * amplitude + offset
 			);
+
+			// p5.circle(
+			// 	p5.map(i, 0, points, 15, 585), // Distribute circles across canvas
+			// 	Math.sin((p5.frameCount + (i * frequency)) / points) * amplitude + offset, // Offset wave
+			// 	20, // Diameter
+			// );
 		}
+		p5.endShape();
 	};
 };
 
