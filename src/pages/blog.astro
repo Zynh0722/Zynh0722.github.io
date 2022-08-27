@@ -4,18 +4,13 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 import sortBy from '@lib/byDate';
-import readTime from '@lib/readTime';
 
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
 const posts = (await Astro.glob('./blog/*.{md,mdx}'))
 	.filter(post => !post.frontmatter.draft || import.meta.env.DEV)
-	.sort(sortBy)
-	.map(p => ({ 
-		post: p,
-		readTime: readTime(p)
-	 }));
+	.sort(sortBy);
 ---
 
 <!DOCTYPE html>
@@ -45,7 +40,7 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}'))
 		<main>
 			<content>
 				<ul>
-					{posts.map(({ post, readTime }) => (
+					{posts.map(post => (
 						<li>
 							<time datetime={post.frontmatter.pubDate}>
 								{new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
@@ -56,7 +51,7 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}'))
 							</time> 
 							<a href={post.url}>{post.frontmatter.title}</a>
 							<div class="time-to-read">
-								<time>{readTime.text}</time>
+								<time>{post.frontmatter.readTime.text}</time>
 							</div>
 						</li>
 					))}
