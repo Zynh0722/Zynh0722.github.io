@@ -1,0 +1,58 @@
+<script>
+
+import P5 from 'p5';
+
+interface Circle {
+    pos: P5.Vector
+    vel: P5.Vector
+    size: number
+}
+
+const sketch = (p5: P5) => {
+    let circles: Circle[] = [];
+
+    p5.setup = () => {
+        const canvas = p5.createCanvas(600, 200);
+        canvas.parent('rain');
+
+        circles.push({
+            pos: p5.createVector(0, 0),
+            vel: p5.createVector(0, 1),
+            size: 10,
+        });
+    };
+
+
+    p5.draw = () => {
+        p5.background("white");
+
+        circles.push({
+            pos: p5.createVector(Math.floor(Math.random() * 600), -10),
+            vel: p5.createVector(0, 1),
+            size: 10,
+        });
+        
+        for (let i = 0; i < circles.length; i++) {
+            const { pos, vel, size } = circles[i];
+            p5.circle(pos.x, pos.y, size);
+            circles[i].pos.add(vel);
+
+            if (pos.y > p5.height + size) {
+                circles.splice(i, 1);
+            }
+        }
+    };
+};
+
+new P5(sketch);
+
+</script>
+
+<rain id="rain"></rain>
+
+<style>
+    #test {
+        display: flex;
+        justify-content: center;
+    }
+</style>
