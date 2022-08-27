@@ -3,9 +3,12 @@ layout: ../../layouts/BlogPost.astro
 title:  Polar to Cartesian Conversions
 description: A super short blog post about converting between polar r,theta coordinates to standard x,y coordinates
 pubDate:  Mar 1, 2022
+updatedDate: Aug 27, 2022
 categories: [javascript, math]
 author: Zynh Ludwig
 ---
+import Circles from '../../components/sketches/polar-to-cartesion-demo.astro';
+
 ## The Problem
 
 Often times when working in a 2D display framework you want to display things in a circular pattern.
@@ -38,8 +41,7 @@ let y = r * Math.sin(theta);
 Lets say we want to get the center positions of 20 circles arranged in a circle about 0, 0. As seen in the [p5](https://p5js.org/) sketch seen below.
 [Link to sketches code](https://editor.p5js.org/Zynh0722/sketches/d6GHn4dXp)
 
-<iframe style="width:400px; height:450px; overflow:hidden; margin:auto; display:block" scrolling="no" frameborder="  o" src="https://editor.p5js.org/Zynh0722/full/d6GHn4dXp"></iframe>
-<div style="display: flex;"><i style="text-align: center">CSS note: to center this iframe I had to explicitly declare <code>display:block</code> and use <code>margin:auto</code></i></div>
+<Circles />
 
 All we need to do is divide the number of radians in a circle by 20, to get the angle at each increment evenly spaced apart.
 Then loop through those increments and draw circles.
@@ -65,5 +67,5 @@ for (let i = 0; i < n; i++) {
 Polar coordinates are a powerful tool for converting from Polar coordinates radius and angle to cartesian coordinates x
 and y
 
-<img style="margin:auto; display:block;" src="/assets/Polar-Cartesian-Coordinates-Feature.png">
+<img style="margin:auto; display:block;" src="/assets/Polar-Cartesian-Coordinates-Feature.png" />
 <i style="text-align:center; display:block;">Image shamelessly ripped from <a href="https://www.linearmotiontips.com/motion-basics-difference-between-cartesian-and-polar-coordinate-systems/">Linear motion tips</a></i>
