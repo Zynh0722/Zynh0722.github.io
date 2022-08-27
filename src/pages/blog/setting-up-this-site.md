@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/BlogPost.astro
 title:  "Setting up this blog! [Outdated]"
+description: An old article about how I originally set up my github pages site using jekyll
 pubDate:   Feb 28, 2022
 updatedDate: Aug 23, 2022
 categories: [blog, jekyll]
