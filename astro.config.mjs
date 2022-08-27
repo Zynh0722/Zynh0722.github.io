@@ -4,7 +4,7 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), mdx()],
+  integrations: [mdx()],
   markdown: {
     drafts: true
   }
