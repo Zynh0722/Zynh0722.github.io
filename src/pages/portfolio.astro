@@ -28,7 +28,7 @@ const posts = mdFiles.map((post, i) => ({
         {posts.map(({ title, slug }) => 
             <li class="toc-title">
                 <a href={`#${slug}`}>
-                    {title}
+                {title}
                 </a>
             </li>
         )}
@@ -38,7 +38,7 @@ const posts = mdFiles.map((post, i) => ({
 
     {posts.map(({post, title, slug}) => 
         <article>
-            <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div class="project-title-wrapper">
                 <h2 id={slug} style="text-decoration: underline;">{title}</h2>
                 <a href="#">back to top</a>
             </div>
@@ -64,5 +64,11 @@ const posts = mdFiles.map((post, i) => ({
 
     .toc-title {
         display: block;
+    }
+
+    .project-title-wrapper {
+        display: flex; 
+        align-items: baseline; 
+        justify-content: space-between;
     }
 </style>
