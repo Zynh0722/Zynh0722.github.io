@@ -7,7 +7,7 @@ const content = {
     description: "A short summary of some of my past projects, hopefully illustrating some of the places I've already explored!"
 }
 
-const mdFiles = await Astro.glob('../data/projects/*.md');
+const mdFiles = (await Astro.glob('../data/projects/*.md')).filter(post => !post.frontmatter.draft || import.meta.env.DEV);
 const headings = mdFiles.map(post => post.frontmatter.title)
                         .map(title => ({ 
                             slug: title.replace(' ', '-').toLowerCase(),
