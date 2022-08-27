@@ -14,22 +14,18 @@ const sketch = (p5: P5) => {
     p5.setup = () => {
         const canvas = p5.createCanvas(600, 200);
         canvas.parent('rain');
-
-        circles.push({
-            pos: p5.createVector(0, 0),
-            vel: p5.createVector(0, 1),
-            size: 10,
-        });
+        p5.fill(0);
+        p5.noStroke();
     };
 
 
     p5.draw = () => {
-        p5.background("white");
+        p5.background(255,255,255,25);
 
         circles.push({
-            pos: p5.createVector(Math.floor(Math.random() * 600), -10),
+            pos: p5.createVector(Math.floor(Math.random() * 580 + 10), -10),
             vel: p5.createVector(0, 1),
-            size: 10,
+            size: 2,
         });
         
         for (let i = 0; i < circles.length; i++) {
