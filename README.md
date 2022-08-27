@@ -1,44 +1,16 @@
-# Welcome to [Astro](https://astro.build)
+# Welcome to my blog site!!! 
+[![Deploy Astro to GitHub Pages](https://github.com/Zynh0722/Zynh0722.github.io/actions/workflows/astro.yml/badge.svg)](https://github.com/Zynh0722/Zynh0722.github.io/actions/workflows/astro.yml)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+This is just a fun place for me to put my thoughts and portfolio!
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+I kept the site simple, shooting for one tagline `brutalist and responsive`
 
-## 🚀 Project Structure
+My goal for this site is maximum accessibility and functionality. 
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-/
-├── public/
-│   └── favicon.ico
-├── src/
-│   ├── components/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components or layouts.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                | Action                                             |
-| :--------------------- | :------------------------------------------------- |
-| `npm install`          | Installs dependencies                              |
-| `npm run dev`          | Starts local dev server at `localhost:3000`        |
-| `npm run build`        | Build your production site to `./dist/`            |
-| `npm run preview`      | Preview your build locally, before deploying       |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
-| `npm run astro --help` | Get help using the Astro CLI                       |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Main tenents include:
+ - Layout should function across all devices
+ - Meta tags should function, if not be SEO optimized
+ - The site will contain minimal javascript, only used for animated visualizations, not for ui or funtionality
+ - Using example code live in browser when plausible
+ 
+Enjoy the site, and feel free to email me with feedback at Zynh0722@gmail.com
