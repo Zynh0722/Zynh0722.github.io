@@ -9,13 +9,12 @@ export interface Props {
 		updatedDate?: string;
 		heroImage?: string;
 		author?: string;
-		sketches?: string[];
 	}
 }
 
 const { content } = Astro.props as Props;
 const {
-	title, pubDate, updatedDate, heroImage, author, sketches
+	title, pubDate, updatedDate, heroImage, author
 } = content;
 ---
 

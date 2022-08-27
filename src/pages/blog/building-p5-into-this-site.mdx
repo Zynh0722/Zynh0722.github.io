@@ -2,10 +2,35 @@
 layout: ../../layouts/BlogPost.astro
 title:  Building p5.js into this site
 description: A short story about the path I took to implement p5.js sketches natively in my site
-pubDate:  Aug 26, 2022
+pubDate:  Aug 27, 2022
 categories: [javascript, p5]
 author: Zynh Ludwig
 draft: true
 ---
+import Test from '../../components/sketches/p5-demo/test.astro'
 
 ## p5.js
+
+If you don't already know about [p5.js](https://p5js.org/) then go ahead and click [this link](https://p5js.org/).
+If you still don't know and still haven't clicked the link, it is effectively a abstraction layer over the native [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
+
+Anyway this tool is super super useful for creating visualizations and graphical effects, all while working in simple primitives. It also includes a simple
+vector library, so it has everything you need in a convenient package.
+
+I am 100% open to alternatives for this purpose, but p5 is what I know and it does the job!
+
+<Test />
+
+## How it happened
+
+Anyway, the important part is how I managed this!! I had previously used the p5.min library and distributed it myself.
+However instead of that I am using npm modules. [p5](https://www.npmjs.com/package/p5) and [@types/p5](https://www.npmjs.com/package/@types/p5).
+The latter is what allows me to use typescript, or more precisely use typescript's very nice autocomplete.
+
+It ended up being quite the ordeal to actually get the scripts to be convenient to import into markdown files. What I ended up doing is reworking my
+read time calculations with a plugin so it supports `mdx` files. After this I end up just using a plain astro file that contains a div for the canvas to be inserted in,
+and styling for the div. 
+
+### Resources
+[MDX Documentation](https://docs.astro.build/en/guides/markdown-content/) - This is the markdown extension I use\
+[p5.js](https://p5js.org/) - The Graphics library that I've implemented

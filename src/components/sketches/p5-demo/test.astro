@@ -1,0 +1,37 @@
+<script>
+
+import P5 from 'p5';
+
+
+const sketch = (p5: P5) => {
+	p5.setup = () => {
+		const canvas = p5.createCanvas(600, 200);
+		canvas.parent('test');
+	};
+
+
+	p5.draw = () => {
+		p5.background("white");
+        for (let i = 0; i < 20; i++) {
+			p5.circle(
+				p5.map(i, 0, 20, 15, 585), // Distribute circles across canvas
+				Math.sin((p5.frameCount + (i * 10)) / 20) * 75 + 100, // Offset wave
+				20, // Diameter
+			);
+		}
+	};
+};
+
+new P5(sketch);
+
+
+</script>
+
+<test id="test"></test>
+
+<style>
+	#test {
+		display: flex;
+		justify-content: center;
+	}
+</style>
