@@ -22,7 +22,7 @@ const re = /ab+c/; // Compiled at script load time.
  - You can also construct a `RegExp` object:
 ```js
 const re = new RegExp('ab+c'); // These are compiled at runtime
-                               // These perform a bit worse, but can be changed.
+                        // These perform a bit worse, but can be changed.
 ```
 
 <br />
