@@ -1,4 +1,8 @@
+---
+const id = 'rain';
+---
 <script>
+const id = 'rain';
 
 import P5 from 'p5';
 
@@ -13,7 +17,7 @@ const sketch = (p5: P5) => {
 
     p5.setup = () => {
         const canvas = p5.createCanvas(600, 200);
-        canvas.parent('rain');
+        canvas.parent(id);
         p5.fill(0);
         p5.noStroke();
         p5.background("white");
@@ -41,12 +45,14 @@ const sketch = (p5: P5) => {
     };
 };
 
-new P5(sketch);
+if(document.getElementById(id)) {
+    new P5(sketch);
+}
 
 </script>
 
 <a href="https://github.com/Zynh0722/Zynh0722.github.io/blob/main/src/components/sketches/p5-demo/rain.astro">
-    <rain id="rain" />
+    <rain id={id} />
 </a>
 
 <style>

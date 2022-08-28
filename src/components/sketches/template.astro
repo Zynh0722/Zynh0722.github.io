@@ -1,10 +1,16 @@
+---
+const id = 'insert-id-here';
+---
 <script>
+const id = 'insert-id-here';
 
 import P5 from 'p5';
 
 const sketch = (p5: P5) => {
     p5.setup = () => {
-
+        const canvas = p5.createCanvas(250, 250);
+        canvas.parent(id);
+        p5.background('white');
     };
 
 
@@ -13,12 +19,14 @@ const sketch = (p5: P5) => {
     };
 };
 
-new P5(sketch);
+if(document.getElementById(id)) {
+    new P5(sketch);
+}
 
 </script>
 
 <a>
-    <test id="insert-id-here"></test>
+    <test id={id}></test>
 </a>
 
 <style>

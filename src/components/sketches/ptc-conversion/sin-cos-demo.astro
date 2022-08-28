@@ -1,89 +1,95 @@
+---
+const id = 'sin-cos';
+---
 <script>
+const id = 'sin-cos';
 
-    import P5, { Vector } from 'p5';
-    
-    const sketch = (p5: P5) => {
-        p5.setup = () => {
-            const canvas = p5.createCanvas(325, 325);
-            canvas.parent('sin-cos');
-            
-            p5.strokeWeight(5);
-            p5.noFill();
-            p5.textSize(20);
-        };
-    
-    
-        p5.draw = () => {
-            p5.background('white');
+import P5, { Vector } from 'p5';
 
-            p5.translate(p5.width / 2, p5.height / 2);
-
-            const theta = p5.frameCount / 100;
-            const r = 150;
-
-            // Create the line and calculate x and y components using dot product and unit vectors
-            const point = p5.createVector(Math.cos(theta) * r, Math.sin(theta) * r);
-            const x = Vector.dot(point, p5.createVector(0, 1));
-            const y = Vector.dot(point, p5.createVector(1, 0));
-
-            // Circle and Graph Lines
-            p5.push();
-                p5.strokeWeight(2);
-                p5.line(-500, 0, 500, 0);
-                p5.line(0, -500, 0, 500);
-                p5.circle(0, 0, r*2);
-            p5.pop();
-
-            // Time to start drawing red things
-            p5.stroke('red');
-
-            // Sin text
-            p5.push()
-                p5.fill('red')
-                p5.strokeWeight(1);
-                p5.text('sin(Θ)', 102, -140);
-            p5.pop();
-
-            // Sin Line
-            p5.line(0, 0, 0, -x);
-            
-            // Time to start drawing blue things
-            p5.stroke('blue');
-
-            // Cos Text
-            p5.push()
-                p5.fill('blue');
-                p5.strokeWeight(1);
-                p5.text('cos(Θ)', 100, -115);
-            p5.pop();
-
-            // Cos Line
-            p5.line(0, -x, y, -point.y);
-
-            // Actual Vector
-            p5.stroke('black');
-            p5.line(0, 0, point.x, -point.y);
-
-            // Θ =
-            p5.push();
-                p5.fill('black')
-                p5.strokeWeight(1);
-                p5.text(`Θ = ${(theta % p5.TAU).toFixed(1)}`, 90, 150);
-            p5.pop();
-        };
+const sketch = (p5: P5) => {
+    p5.setup = () => {
+        const canvas = p5.createCanvas(325, 325);
+        canvas.parent(id);
+        
+        p5.strokeWeight(5);
+        p5.noFill();
+        p5.textSize(20);
     };
-    
+
+
+    p5.draw = () => {
+        p5.background('white');
+
+        p5.translate(p5.width / 2, p5.height / 2);
+
+        const theta = p5.frameCount / 100;
+        const r = 150;
+
+        // Create the line and calculate x and y components using dot product and unit vectors
+        const point = p5.createVector(Math.cos(theta) * r, Math.sin(theta) * r);
+        const x = Vector.dot(point, p5.createVector(0, 1));
+        const y = Vector.dot(point, p5.createVector(1, 0));
+
+        // Circle and Graph Lines
+        p5.push();
+            p5.strokeWeight(2);
+            p5.line(-500, 0, 500, 0);
+            p5.line(0, -500, 0, 500);
+            p5.circle(0, 0, r*2);
+        p5.pop();
+
+        // Time to start drawing red things
+        p5.stroke('red');
+
+        // Sin text
+        p5.push()
+            p5.fill('red')
+            p5.strokeWeight(1);
+            p5.text('sin(Θ)', 102, -140);
+        p5.pop();
+
+        // Sin Line
+        p5.line(0, 0, 0, -x);
+        
+        // Time to start drawing blue things
+        p5.stroke('blue');
+
+        // Cos Text
+        p5.push()
+            p5.fill('blue');
+            p5.strokeWeight(1);
+            p5.text('cos(Θ)', 100, -115);
+        p5.pop();
+
+        // Cos Line
+        p5.line(0, -x, y, -point.y);
+
+        // Actual Vector
+        p5.stroke('black');
+        p5.line(0, 0, point.x, -point.y);
+
+        // Θ =
+        p5.push();
+            p5.fill('black')
+            p5.strokeWeight(1);
+            p5.text(`Θ = ${(theta % p5.TAU).toFixed(1)}`, 90, 150);
+        p5.pop();
+    };
+};
+
+if(document.getElementById(id)) {
     new P5(sketch);
-    
-    </script>
-    
-    <a href="https://github.com/Zynh0722/Zynh0722.github.io/blob/main/src/components/sketches/ptc-conversion/sin-cos-demo.astro">
-        <sin-cos id="sin-cos" />
-    </a>
-    
-    <style>
-        #sin-cos {
-            display: flex;
-            justify-content: center;
-        }
-    </style>
+}
+
+</script>
+
+<a href="https://github.com/Zynh0722/Zynh0722.github.io/blob/main/src/components/sketches/ptc-conversion/sin-cos-demo.astro">
+    <sin-cos id={id} />
+</a>
+
+<style>
+    #sin-cos {
+        display: flex;
+        justify-content: center;
+    }
+</style>

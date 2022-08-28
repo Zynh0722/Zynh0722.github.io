@@ -1,11 +1,15 @@
+---
+const id = 'circle';
+---
 <script>
+const id = 'circle';
 
 import P5 from 'p5';
 
 const sketch = (p5: P5) => {
     p5.setup = () => {
         const canvas = p5.createCanvas(250, 250);
-        canvas.parent('circle');
+        canvas.parent(id);
         p5.background('white');
     };
 
@@ -23,12 +27,14 @@ const sketch = (p5: P5) => {
     };
 };
 
-new P5(sketch);
+if(document.getElementById(id)) {
+    new P5(sketch);
+}
 
 </script>
 
 <a href="https://github.com/Zynh0722/Zynh0722.github.io/blob/main/src/components/sketches/ptc-conversion/polar-to-cartesion-demo.astro">
-    <circles id="circle" />
+    <circles id={id} />
 </a>
 
 <style>
