@@ -45,7 +45,7 @@
             p5.pop();
 
             // Sin Line
-            p5.line(0, 0, 0, x);
+            p5.line(0, 0, 0, -x);
             
             // Time to start drawing blue things
             p5.stroke('blue');
@@ -58,11 +58,18 @@
             p5.pop();
 
             // Cos Line
-            p5.line(0, x, y, point.y);
+            p5.line(0, -x, y, -point.y);
 
             // Actual Vector
             p5.stroke('black');
-            p5.line(0, 0, point.x, point.y);
+            p5.line(0, 0, point.x, -point.y);
+
+            // Θ =
+            p5.push();
+                p5.fill('black')
+                p5.strokeWeight(1);
+                p5.text(`Θ = ${(theta % p5.TAU).toFixed(1)}`, 90, 150);
+            p5.pop();
         };
     };
     
