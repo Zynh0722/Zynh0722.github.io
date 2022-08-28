@@ -20,7 +20,7 @@ const sketch = (p5: P5) => {
 		const speed = 20
 
 		const offset = p5.height / 2;
-        for (let i = 0; i < points; i++) {
+		for (let i = 0; i < points; i++) {
 			p5.vertex(
 				p5.map(i, 0, points, 15, 585), 
 				Math.sin((p5.frameCount + i * speed) / points) * amplitude + offset
