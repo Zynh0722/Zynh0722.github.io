@@ -43,6 +43,7 @@ const sketch = (p5: P5) => {
 
         // Sin text
         p5.push()
+            p5.noStroke();
             p5.fill('red')
             p5.strokeWeight(1);
             p5.text('sin(Θ)', 102, -140);
@@ -56,6 +57,7 @@ const sketch = (p5: P5) => {
 
         // Cos Text
         p5.push()
+            p5.noStroke();
             p5.fill('blue');
             p5.strokeWeight(1);
             p5.text('cos(Θ)', 100, -115);
@@ -70,6 +72,7 @@ const sketch = (p5: P5) => {
 
         // Θ =
         p5.push();
+            p5.noStroke();
             p5.fill('black')
             p5.strokeWeight(1);
             p5.text(`Θ = ${(theta % p5.TAU).toFixed(1)}`, 90, 150);
