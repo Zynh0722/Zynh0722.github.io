@@ -1,0 +1,57 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { SITE_TITLE } from "src/config";
+
+const content = {
+    title: `Portfolio - ${SITE_TITLE}`,
+    description: "A short summary of some of my past projects, hopefully illustrating some of the places I've already explored!"
+}
+---
+
+<Layout content={content} >
+    <h1 class="cal-header">Days of Zynh</h1>
+    <div class="day-container">
+        {new Array(29220).fill(0).map(() => <div class="day"></div>)}
+    </div>
+</Layout>
+
+<script>
+    const bday: any = new Date('July 22, 2002 04:57:00');
+    const oneDay = 1000 * 60 * 60 * 24;
+    const diffInTime = Date.now() - bday.getTime();
+    const diffInDays = Math.round(diffInTime / oneDay);
+
+    console.log(diffInDays);
+
+    const days = document.querySelectorAll(`.day:nth-child(-n+${diffInDays})`);
+    for (const day of days) {
+        // @ts-ignore
+        day.style.backgroundColor = 'grey';
+    }
+</script>
+
+<style>
+    :root {
+        --days: 7290;
+    }
+
+    .cal-header {
+        text-align: center;
+    }
+
+    .day-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .day {
+        border: 1px black solid;
+        width: 5px;
+        height: 5px;
+        margin: 1px;
+    }
+
+    /* .day:nth-child(-n+7290) {
+        background-color: black;
+    } */
+</style>
