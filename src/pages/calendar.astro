@@ -21,12 +21,10 @@ const content = {
     const diffInTime = Date.now() - bday.getTime();
     const diffInDays = Math.round(diffInTime / oneDay);
 
-    console.log(diffInDays);
-
-    const days = document.querySelectorAll(`.day:nth-child(-n+${diffInDays})`);
-    for (const day of days) {
+    const days = document.querySelectorAll(`.day`);
+    for (let i = 0; i < diffInDays; i++) {
         // @ts-ignore
-        day.style.backgroundColor = 'grey';
+        days[i].style.backgroundColor = 'grey';
     }
 </script>
 
