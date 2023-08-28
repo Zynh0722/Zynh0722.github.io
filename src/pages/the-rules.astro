@@ -1,0 +1,35 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { SITE_TITLE } from "src/config";
+
+const content = {
+  title: `Portfolio - ${SITE_TITLE}`,
+  description:
+    "A short summary of some of my past projects, hopefully illustrating some of the places I've already explored!",
+};
+
+const rules = [];
+rules[1] = "Protect and Honor your friends";
+rules[2] = "Kill with Conscience";
+rules[3] = "Reveal Nothing";
+rules[5] = "Reveal Nothing";
+rules[6] = "Don't get injured";
+rules[8] = "Know your surroundings";
+---
+
+<Layout content={content}>
+  <table>
+    <tr>
+      <th>Rule</th>
+      <th>Description</th>
+    </tr>
+    {
+      Object.entries(rules).map(([index, value]) => (
+        <tr>
+          <td>{index}</td>
+          <td>{value}</td>
+        </tr>
+      ))
+    }
+  </table>
+</Layout>
