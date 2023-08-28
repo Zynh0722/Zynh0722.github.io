@@ -9,7 +9,7 @@ import readTimePlugin from './src/lib/readTime.mjs';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [mdx({ remarkPlugins: { extends: [readTimePlugin] } }), sitemap(), compress(), robotsTxt()],
+  integrations: [mdx({ remarkPlugins: [readTimePlugin] }), sitemap(), compress(), robotsTxt()],
   markdown: {
     drafts: true,
     remarkPlugins: [readTimePlugin],
