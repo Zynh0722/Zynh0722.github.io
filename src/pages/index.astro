@@ -1,57 +1,64 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 ---
 
 <!DOCTYPE html>
 <html lang="en-us">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<h1>🧙‍♀️ Hail Traveler!</h1>
-			<p>
-				Here lies a repository of the shenanigans and machinations of me! Zynh!
-			</p>
-			<p>
-				Feel free to make yourself at home. Everything you need to should be
-				found at the top of the page, and if you need anything from me, my contact
-				info is all over the place here. <i>(as well as always at the bottom of the page)</i>
-			</p>
-			<p>
-				You will likely come across some of the animated visualizations I've layed about, maybe even
-				on this page! These are all being rendered live on your browser using something called <a href="https://p5js.org/">p5.js</a>.
-				If you are interested in creative coding, but are scared about how to get started, I highly recommend
-				taking a look at <a href="https://www.youtube.com/c/TheCodingTrain">The Coding Train</a> on youtube, they give a good entrypoint into the world
-				of creative coding using JavaScript.
-			</p>
-			<p>
-				For those who care about the tech behind this site, it is built with <a href="https://astro.build/">Astro!</a>.
-				It's currently an offshoot of the default blog template, and I am actively adding features such as the p5 integration
-				and read time calculations!
-			</p>
-			<p>Coming soon to a page near you:</p>
-			<ul>
-				<li>More blog posts!!!</li>
-				<li>Pagination in the <a href="/blog">blog</a> page</li>
-				<li>Dark theme</li>
-				<li>Anything else I or you think is cool, toss me an email!</li>
-			</ul>
-			<p>
-				Have fun! If you get stuck or want me to add something, 
-				<a href="mailto:Zynh0722@gmail.com">toss me an email</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+      <h1>🧙‍♀️ Hail Traveler!</h1>
+      <p>
+        Here lies a repository of the shenanigans and machinations of me! Zynh!
+      </p>
+      <p>
+        Feel free to make yourself at home. Everything you need to should be
+        found at the top of the page, and if you need anything from me, my
+        contact info is all over the place here. <i
+          >(as well as always at the bottom of the page)</i
+        >
+      </p>
+      <p>
+        You will likely come across some of the animated visualizations I've
+        layed about, maybe even on this page! These are all being rendered live
+        on your browser using something called <a href="https://p5js.org/"
+          >p5.js</a
+        >. If you are interested in creative coding, but are scared about how to
+        get started, I highly recommend taking a look at <a
+          href="https://www.youtube.com/c/TheCodingTrain">The Coding Train</a
+        > on youtube, they give a good entrypoint into the world of creative coding
+        using JavaScript.
+      </p>
+      <p>
+        For those who care about the tech behind this site, it is built with <a
+          href="https://astro.build/">Astro!</a
+        >. It's currently an offshoot of the default blog template, and I am
+        actively adding features such as the p5 integration and read time
+        calculations!
+      </p>
+      <p>Coming soon to a page near you:</p>
+      <ul>
+        <li>More blog posts!!!</li>
+        <li>Pagination in the <a href="/blog">blog</a> page</li>
+        <li>Dark theme</li>
+        <li>Anything else I or you think is cool, toss me an email!</li>
+      </ul>
+      <p>
+        Have fun! If you get stuck or want me to add something,
+        <a href="mailto:Zynh0722@gmail.com">toss me an email</a>.
+      </p>
+    </main>
+    <Footer />
+  </body><style>
+    h1 {
+      text-align: center;
+    }
+  </style>
 </html>
 
-<style>
-	h1 {
-		text-align: center;
-	}
-</style>

@@ -3,72 +3,81 @@ import Layout from "@layouts/Layout.astro";
 import { SITE_TITLE } from "src/config";
 
 const content = {
-    title: `Portfolio - ${SITE_TITLE}`,
-    description: "A short summary of some of my past projects, hopefully illustrating some of the places I've already explored!"
-}
+  title: `Portfolio - ${SITE_TITLE}`,
+  description:
+    "A short summary of some of my past projects, hopefully illustrating some of the places I've already explored!",
+};
 
-const mdFiles = (await Astro.glob('../data/projects/*.md')).filter(post => !post.frontmatter.draft || import.meta.env.DEV);
-const headings = mdFiles.map(post => post.frontmatter.title)
-                        .map(title => ({ 
-                            slug: title.replace(' ', '-').toLowerCase(),
-                            title
-                        }));
+const mdFiles = (await Astro.glob("../data/projects/*.md")).filter(
+  (post) => !post.frontmatter.draft || import.meta.env.DEV
+);
+const headings = mdFiles
+  .map((post) => post.frontmatter.title)
+  .map((title) => ({
+    slug: title.replace(" ", "-").toLowerCase(),
+    title,
+  }));
 
 const posts = mdFiles.map((post, i) => ({
-                post,
-                ...headings[i]
-            }));
+  post,
+  ...headings[i],
+}));
 ---
 
 <Layout content={content}>
-    <hr />
+  <hr />
 
-    <ul class="toc-wrapper">
-        <h2 class="toc-header">Table of Contents</h2>
-        {posts.map(({ title, slug }) => 
-            <li class="toc-title">
-                <a href={`#${slug}`}>
-                {title}
-                </a>
-            </li>
-        )}
-    </ul>
+  <ul class="toc-wrapper">
+    <h2 class="toc-header">Table of Contents</h2>
+    {
+      posts.map(({ title, slug }) => (
+        <li class="toc-title">
+          <a href={`#${slug}`}>{title}</a>
+        </li>
+      ))
+    }
+  </ul>
 
-    <hr />
+  <hr />
 
-    {posts.map(({post, title, slug}) => 
-        <article>
-            <div class="project-title-wrapper">
-                <h2 id={slug} style="text-decoration: underline;">{title}</h2>
-                <a href="#">back to top</a>
-            </div>
-            <post.Content />
-        </article>
-    )}
+  {
+    posts.map(({ post, title, slug }) => (
+      <article>
+        <div class="project-title-wrapper">
+          <h2 id={slug} style="text-decoration: underline;">
+            {title}
+          </h2>
+          <a href="#">back to top</a>
+        </div>
+        <post.Content />
+      </article>
+    ))
+  }
 </Layout>
 <style>
-    .toc-wrapper {
-        all: unset;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  .toc-wrapper {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .toc-header {
-        all: unset;
-        font-size: 1.25em;
-        font-weight: bold;
-        text-decoration: underline;
-        margin-block-end: 0.25em;
-    }
+  .toc-header {
+    all: unset;
+    font-size: 1.25em;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-block-end: 0.25em;
+  }
 
-    .toc-title {
-        display: block;
-    }
+  .toc-title {
+    display: block;
+  }
 
-    .project-title-wrapper {
-        display: flex; 
-        align-items: baseline; 
-        justify-content: space-between;
-    }
+  .project-title-wrapper {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
 </style>
+
