@@ -1,34 +1,30 @@
 ---
-const id = 'insert-id-here';
+const id = "insert-id-here";
 ---
+
 <script>
-const id = 'insert-id-here';
+  const id = "insert-id-here";
 
-import P5 from 'p5';
+  import P5 from "p5";
 
-const sketch = (p5: P5) => {
+  const sketch = (p5: P5) => {
     p5.setup = () => {
-        const canvas = p5.createCanvas(250, 250);
-        canvas.parent(id);
-        p5.background('white');
+      const canvas = p5.createCanvas(250, 250);
+      canvas.parent(id);
+      p5.background("white");
     };
 
+    p5.draw = () => {};
+  };
 
-    p5.draw = () => {
-
-    };
-};
-
-if(document.getElementById(id)) {
+  if (document.getElementById(id)) {
     new P5(sketch);
-}
-
+  }
 </script>
 
 <a>
-    <test id={id}></test>
+  <test id={id}></test>
 </a>
 
-<style>
+<style></style>
 
-</style>

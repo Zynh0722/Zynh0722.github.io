@@ -1,63 +1,64 @@
 ---
-const id = 'rain';
+const id = "rain";
 ---
+
 <script>
-const id = 'rain';
+  const id = "rain";
 
-import P5 from 'p5';
+  import P5 from "p5";
 
-interface Circle {
-    pos: P5.Vector
-    vel: P5.Vector
-    size: number
-}
+  interface Circle {
+    pos: P5.Vector;
+    vel: P5.Vector;
+    size: number;
+  }
 
-const sketch = (p5: P5) => {
+  const sketch = (p5: P5) => {
     let circles: Circle[] = [];
 
     p5.setup = () => {
-        const canvas = p5.createCanvas(600, 200);
-        canvas.parent(id);
-        p5.fill(0);
-        p5.noStroke();
-        p5.background("white");
+      const canvas = p5.createCanvas(600, 200);
+      canvas.parent(id);
+      p5.fill(0);
+      p5.noStroke();
+      p5.background("white");
     };
-
 
     p5.draw = () => {
-        p5.background(255,255,255,25);
+      p5.background(255, 255, 255, 25);
 
-        circles.push({
-            pos: p5.createVector(Math.floor(Math.random() * 598 + 2), -2),
-            vel: p5.createVector(0, 1),
-            size: 2,
-        });
-        
-        for (let i = 0; i < circles.length; i++) {
-            const { pos, vel, size } = circles[i];
-            p5.circle(pos.x, pos.y, size);
-            circles[i].pos.add(vel);
+      circles.push({
+        pos: p5.createVector(Math.floor(Math.random() * 598 + 2), -2),
+        vel: p5.createVector(0, 1),
+        size: 2,
+      });
 
-            if (pos.y > p5.height + size) {
-                circles.splice(i, 1);
-            }
+      for (let i = 0; i < circles.length; i++) {
+        const { pos, vel, size } = circles[i];
+        p5.circle(pos.x, pos.y, size);
+        circles[i].pos.add(vel);
+
+        if (pos.y > p5.height + size) {
+          circles.splice(i, 1);
         }
+      }
     };
-};
+  };
 
-if(document.getElementById(id)) {
+  if (document.getElementById(id)) {
     new P5(sketch);
-}
-
+  }
 </script>
 
-<a href="https://github.com/Zynh0722/Zynh0722.github.io/blob/main/src/components/sketches/p5-demo/rain.astro">
-    <rain id={id} />
+<a
+  href="https://github.com/Zynh0722/Zynh0722.github.io/blob/main/src/components/sketches/p5-demo/rain.astro"
+>
+  <rain id={id}></rain>
 </a>
 
 <style>
-    #test {
-        display: flex;
-        justify-content: center;
-    }
+  #test {
+    display: flex;
+    justify-content: center;
+  }
 </style>

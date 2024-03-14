@@ -1,52 +1,54 @@
 ---
-const id = 'test';
+const id = "test";
 ---
+
 <script>
-const id = 'test';
+  const id = "test";
 
-import P5 from 'p5';
+  import P5 from "p5";
 
-const sketch = (p5: P5) => {
-	p5.setup = () => {
-		const canvas = p5.createCanvas(600, 200);
-		canvas.parent(id);
-	};
+  const sketch = (p5: P5) => {
+    p5.setup = () => {
+      const canvas = p5.createCanvas(600, 200);
+      canvas.parent(id);
+    };
 
+    p5.draw = () => {
+      p5.background("white");
+      p5.noFill();
+      p5.strokeWeight(4);
+      p5.beginShape();
 
-	p5.draw = () => {
-		p5.background("white");
-		p5.noFill();
-		p5.strokeWeight(4)
-		p5.beginShape();
+      const points = 100;
+      const amplitude = 75;
+      const speed = 20;
 
-		const points = 100;
-		const amplitude = 75;
-		const speed = 20
+      const offset = p5.height / 2;
+      for (let i = 0; i < points; i++) {
+        p5.vertex(
+          p5.map(i, 0, points, 15, 585),
+          Math.sin((p5.frameCount + i * speed) / points) * amplitude + offset
+        );
+      }
+      p5.endShape();
+    };
+  };
 
-		const offset = p5.height / 2;
-		for (let i = 0; i < points; i++) {
-			p5.vertex(
-				p5.map(i, 0, points, 15, 585), 
-				Math.sin((p5.frameCount + i * speed) / points) * amplitude + offset
-			);
-		}
-		p5.endShape();
-	};
-};
-
-if(document.getElementById(id)) {
+  if (document.getElementById(id)) {
     new P5(sketch);
-}
-
+  }
 </script>
 
-<a href="https://github.com/Zynh0722/Zynh0722.github.io/blob/main/src/components/sketches/p5-demo/test.astro">
-	<test id={id} />
+<a
+  href="https://github.com/Zynh0722/Zynh0722.github.io/blob/main/src/components/sketches/p5-demo/test.astro"
+>
+  <test id={id}></test>
 </a>
 
 <style>
-	#test {
-		display: flex;
-		justify-content: center;
-	}
+  #test {
+    display: flex;
+    justify-content: center;
+  }
 </style>
+
