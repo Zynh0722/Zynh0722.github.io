@@ -16,7 +16,6 @@ export default defineConfig({
     robotsTxt(),
   ],
   markdown: {
-    drafts: true,
     remarkPlugins: [readTimePlugin],
   },
   site: "https://zynh.me/",
