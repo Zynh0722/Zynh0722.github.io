@@ -1,13 +1,14 @@
 ---
 layout: ../../layouts/BlogPost.astro
-title:  Building p5.js into this site
+title: Building p5.js into this site
 description: A short story about the path I took to implement p5.js sketches natively in my site
-pubDate:  Aug 27, 2022
+pubDate: Aug 27, 2022
 categories: [javascript, p5]
 author: Zynh Ludwig
 ---
-import Test from '@sketches/p5-demo/test.astro';
-import Rain from '@sketches/p5-demo/rain.astro';
+
+import Test from "@sketches/p5-demo/test.astro";
+import Rain from "@sketches/p5-demo/rain.astro";
 
 ## p5.js
 
@@ -29,11 +30,12 @@ The latter is what allows me to use typescript, or more precisely use typescript
 
 It ended up being quite the ordeal to actually get the scripts to be convenient to import into markdown files. What I ended up doing is reworking my
 read time calculations with a plugin so it supports `mdx` files. After this I end up just using a plain astro file that contains a div for the canvas to be inserted in,
-and styling for the div. 
+and styling for the div.
 
 <Rain />
 
 ### Resources
+
 [MDX Documentation](https://docs.astro.build/en/guides/markdown-content/) - This is the markdown extension I use\
 [p5.js](https://p5js.org/) - The Graphics library that I've implemented\
 [npm p5](https://www.npmjs.com/package/p5) - The p5 npm package I installed\

@@ -1,14 +1,15 @@
 ---
 layout: ../../layouts/BlogPost.astro
-title:  Polar to Cartesian Conversions
+title: Polar to Cartesian Conversions
 description: A super short blog post about converting between polar r,theta coordinates to standard x,y coordinates
-pubDate:  Mar 1, 2022
+pubDate: Mar 1, 2022
 updatedDate: Aug 28, 2022
 categories: [javascript, math]
 author: Zynh Ludwig
 ---
-import Circles from '@sketches/ptc-conversion/polar-to-cartesion-demo.astro';
-import SinCos from '@sketches/ptc-conversion/sin-cos-demo.astro';
+
+import Circles from "@sketches/ptc-conversion/polar-to-cartesion-demo.astro";
+import SinCos from "@sketches/ptc-conversion/sin-cos-demo.astro";
 
 ## The Problem
 
@@ -48,18 +49,18 @@ All we need to do is divide the number of radians in a circle by 20, to get the 
 Then loop through those increments and draw circles.
 
 ```js
-Math.TAU = 2*Math.PI // Math.TAU makes our code a hair cleaner,
-                     // and I am astonished its not a language feature yet
+Math.TAU = 2 * Math.PI; // Math.TAU makes our code a hair cleaner,
+// and I am astonished its not a language feature yet
 
-let n = 20;   // Number of circles
-let r = 100;  // 100px radius
+let n = 20; // Number of circles
+let r = 100; // 100px radius
 for (let i = 0; i < n; i++) {
   let theta = (Math.TAU / n) * i;
   let x = r * Math.cos(theta);
   let y = r * Math.sin(theta);
 
   drawCircle(x, y); // Assuming this is your method
-                    // for drawing a circle at position x, y
+  // for drawing a circle at position x, y
 }
 ```
 
@@ -70,7 +71,16 @@ and y
 
 <SinCos />
 
-Not a perfect visualization, but the angle of the black line in radians is `Θ` and the radius is 1 
+Not a perfect visualization, but the angle of the black line in radians is `Θ` and the radius is 1
 
-<img style="margin:auto; display:block;" src="/assets/Polar-Cartesian-Coordinates-Feature.png" alt="A graphic showing the sin and cos of theta on a vectorg" />
-<i style="text-align:center; display:block;">Image shamelessly ripped from <a href="https://www.linearmotiontips.com/motion-basics-difference-between-cartesian-and-polar-coordinate-systems/">Linear motion tips</a></i>
+<img
+  style="margin:auto; display:block;"
+  src="/assets/Polar-Cartesian-Coordinates-Feature.png"
+  alt="A graphic showing the sin and cos of theta on a vectorg"
+/>
+<i style="text-align:center; display:block;">
+  Image shamelessly ripped from{" "}
+  <a href="https://www.linearmotiontips.com/motion-basics-difference-between-cartesian-and-polar-coordinate-systems/">
+    Linear motion tips
+  </a>
+</i>
