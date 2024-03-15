@@ -12,12 +12,12 @@ draft: true
 <!-- TODO: Intro + Framing device -->
 ```
 
-### Hey programmer, the robot is hard to control
+## Hey programmer, the robot is hard to control
 
 Complaint where the linear input maps poorly with
 the dc motor curves
 
-#### The DC Motor Equations
+### The DC Motor Equations
 
 Show on the Rev Neo data sheet how due to how DC motors work (DC Motor equations?),
 the majority of your robots power output exists in the center of your range
@@ -26,29 +26,27 @@ the majority of your robots power output exists in the center of your range
 <!-- TODO: Show Rev Neo power curves -->
 ```
 
-#### What do I mean by Input mapping?
+segway into mapping inputs onto that range
 
-explain with a piecewise function how we could allow for finer control in our optimal
-power range, and lead into the `f(x) = x^2` function as a quick and simple map that
-gives reasonable control in the low to mid range, with sacrifice granularity in the upper range
-of inputs
+## What do I mean by Input mapping?
 
-#### Basic robust squared inputs for diff drive
+explain with a piecewise function how we could allow for finer control in our optimal power range, and lead into the `f(x) = x^2` function as a quick and simple map that gives reasonable control in the low to mid range, with sacrifice granularity in the upper range of inputs
 
-Show the most basic implementation of a squared inputs in the context of a WPILib DifferentialDrive,
-then compare to the actual DifferentialDrive implementation in WPILibj
+### Basic robust squared inputs for diff drive
+
+Show the most basic implementation of a squared inputs in the context of a WPILib DifferentialDrive, then compare to the actual DifferentialDrive implementation in WPILibj
 
 ```html
 <!-- TODO: Visualize diff drive squared inputs -->
 ```
 
-### And then there was swerve
+## And then there was swerve
 
-As frc has evolved, so have our drive systems. Modern frc has settled largely
-on two predominant platforms, skid steer/WCD, and Swerve drive thanks to the advent
-of COTS swerve modules
+As frc has evolved, so have our drive systems. Modern frc has settled largely on two predominant platforms, skid steer/WCD, and Swerve drive thanks to the advent of COTS swerve modules
 
-#### Our new Axis!
+while once swerve was a mere idea, suddenly it was on a robot and needed to be programmed. As this isn't a swerve programming post (A project for another day), I will skip by implementing a swerve drive part of this process, and instead look merely at how we control it.
+
+### Our new Axis!
 
 Talk about the 3 input axis necessary for controlling a swerve drive, and what that looks
 like on a gamepad
@@ -57,23 +55,21 @@ like on a gamepad
 <!-- TODO: Visualize 3 axis control on a gamepad -->
 ```
 
-#### Don't forget about our dearest squared inputs
+### Don't forget about our dearest squared inputs
 
 Walk brazenly into the naive squared swerve inputs
 
-### The problem
+## The problem
 
 explaining the symptoms, namely the inconsistent drive speed
 
-#### ? Debugging steps
+### ? Debugging steps
 
-Walk through the joystick circle test we performed at comp, and why that means
-need to review what our previous implementation actually does
+Walk through the joystick circle test we performed at comp, and why that means need to review what our previous implementation actually does
 
 ### What does our implementation actually do?
 
-We sorta didn't verify that our naive implementation does
-what we expect it to do, so let's visualize it
+We sorta didn't verify that our naive implementation does what we expect it to do, so let's visualize it
 
 ```html
 <!-- TODO: Visualize the naive implementation -->
@@ -83,7 +79,21 @@ what we expect it to do, so let's visualize it
 
 Talk about maintaining the vector's angle, but scale its magnitude
 
-#### The literal math approach
+### Our first solution!
+
+As with all good problems, you should first take one big step back and determine if pursuing the thing that is causing you problems is worth the hassle at all.
+
+So obviously we can just turn off the input squaring! No squaring of the inputs, no problems. Our speed problems are fixed, we are actually taking full advantage of our drive train, and are ready to compete to our maximum!
+
+Alas, once the driver hears of this change, they will of course be saddened by the loss of the oh so nice squared inputs. And whilst our programmers soul has long since suffered heavy jpeg compression, it nonetheless cannot do to be receiving puppy dog eyes from the driver. We've got to find a real solution...
+
+### A closer look at DifferentialDrive
+
+#### What was it doing in diff drive?
+
+#### What does that look like with our additional axis?
+
+### The polar approach
 
 - Cartesion -> Polar
   - Potentially a subheading about atan2, a programming thing that math people
