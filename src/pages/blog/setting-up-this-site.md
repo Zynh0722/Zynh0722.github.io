@@ -1,8 +1,8 @@
 ---
-layout: ../../layouts/BlogPost.astro
-title:  "Setting up this blog! [Outdated]"
+layout: "@layouts/BlogPost.astro"
+title: "Setting up this blog! [Outdated]"
 description: An old article about how I originally set up my github pages site using jekyll
-pubDate:   Feb 28, 2022
+pubDate: Feb 28, 2022
 updatedDate: Aug 23, 2022
 categories: [blog, jekyll]
 author: Zynh Ludwig
@@ -12,7 +12,7 @@ author: Zynh Ludwig
 
 This page was initially made with github pages' jekyll integration.\
 \
-Overall however I wasn't super happy with this, hopefully I'll have an updated 
+Overall however I wasn't super happy with this, hopefully I'll have an updated
 version for this site later!
 
 ## The Sauce
@@ -25,7 +25,7 @@ neat static site generator based on ruby, that allows for markdown parsing,
 and is generally designed for blogs.
 
 This site's theme is based on the [minima](https://github.com/jekyll/minima)
-theme, although *based on* is a bit of a stretch, as at the time of writing this
+theme, although _based on_ is a bit of a stretch, as at the time of writing this
 it is entirely unedited.
 
 ## Stuff I need to know to maintain this site
@@ -38,9 +38,8 @@ will also be included in posts.
 New posts go in the `_posts` folder with the format `YEAR-MONTH-DAY-title.md`
 
 ```js
-console.log('Just an example of how to use code block highlighting');
+console.log("Just an example of how to use code block highlighting");
 ```
-
 
 ## Final Notes
 

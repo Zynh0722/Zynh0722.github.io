@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPost.astro
+layout: "@layouts/BlogPost.astro"
 title:  "What is Regex?"
 description: A short exposé on regex given from the context of its use in javascript
 pubDate:   Mar 13, 2022
