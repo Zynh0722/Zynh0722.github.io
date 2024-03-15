@@ -1,9 +1,103 @@
 ---
 layout: "@layouts/BlogPost.astro"
 title: A Path to Squared Inputs
-description: A short story about bad assumptions and holonomic polynomial input mapping
+description: A short story about bad assumptions and polynomial input mapping for swerve drive
 categories: [frc, math, robotics]
 author: Zynh Ludwig
 pubDate: Mar 14, 2024
 draft: true
 ---
+
+```html
+<!-- TODO: Intro + Framing device -->
+```
+
+### Hey programmer, the robot is hard to control
+
+Complaint where the linear input maps poorly with
+the dc motor curves
+
+#### The DC Motor Equations
+
+Show on the Rev Neo data sheet how due to how DC motors work (DC Motor equations?),
+the majority of your robots power output exists in the center of your range
+
+```html
+<!-- TODO: Show Rev Neo power curves -->
+```
+
+#### What do I mean by Input mapping?
+
+explain with a piecewise function how we could allow for finer control in our optimal
+power range, and lead into the `f(x) = x^2` function as a quick and simple map that
+gives reasonable control in the low to mid range, with sacrifice granularity in the upper range
+of inputs
+
+#### Basic robust squared inputs for diff drive
+
+Show the most basic implementation of a squared inputs in the context of a WPILib DifferentialDrive,
+then compare to the actual DifferentialDrive implementation in WPILibj
+
+```html
+<!-- TODO: Visualize diff drive squared inputs -->
+```
+
+### And then there was swerve
+
+As frc has evolved, so have our drive systems. Modern frc has settled largely
+on two predominant platforms, skid steer/WCD, and Swerve drive thanks to the advent
+of COTS swerve modules
+
+#### Our new Axis!
+
+Talk about the 3 input axis necessary for controlling a swerve drive, and what that looks
+like on a gamepad
+
+```html
+<!-- TODO: Visualize 3 axis control on a gamepad -->
+```
+
+#### Don't forget about our dearest squared inputs
+
+Walk brazenly into the naive squared swerve inputs
+
+### The problem
+
+explaining the symptoms, namely the inconsistent drive speed
+
+#### ? Debugging steps
+
+Walk through the joystick circle test we performed at comp, and why that means
+need to review what our previous implementation actually does
+
+### What does our implementation actually do?
+
+We sorta didn't verify that our naive implementation does
+what we expect it to do, so let's visualize it
+
+```html
+<!-- TODO: Visualize the naive implementation -->
+```
+
+#### What did we want it to do?
+
+Talk about maintaining the vector's angle, but scale its magnitude
+
+#### The literal math approach
+
+- Cartesion -> Polar
+  - Potentially a subheading about atan2, a programming thing that math people
+    may not know about
+- Scale magnitude
+- Polar -> Cartesion
+
+I need to research (read: ask on math sub) if there is a more computationally
+effecient method of achieving this
+
+I'd really hate for this to be the final result of this write up
+
+talk about its computation costs and maybe other drawbacks
+
+```html
+<!-- TODO: paper conclusion -->
+```
