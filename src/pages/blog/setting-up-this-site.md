@@ -17,16 +17,18 @@ version for this site later!
 
 ## The Sauce
 
-Setting up this site was done following the guidance of [David](https://dfederm.com/about/)
-on [this](https://dfederm.com/creating-a-blog-using-github-pages/) page of his blog.
+Setting up this site was done following the guidance of
+[David](https://dfederm.com/about/) on
+[this](https://dfederm.com/creating-a-blog-using-github-pages/) page of his
+blog.
 
 This site is based around [Jekyll](https://jekyllrb.com/), which is a really
-neat static site generator based on ruby, that allows for markdown parsing,
-and is generally designed for blogs.
+neat static site generator based on ruby, that allows for markdown parsing, and
+is generally designed for blogs.
 
 This site's theme is based on the [minima](https://github.com/jekyll/minima)
-theme, although _based on_ is a bit of a stretch, as at the time of writing this
-it is entirely unedited.
+theme, although _based on_ is a bit of a stretch, as at the time of writing
+this it is entirely unedited.
 
 ## Stuff I need to know to maintain this site
 
@@ -45,9 +47,9 @@ console.log("Just an example of how to use code block highlighting");
 
 If all goes well this site will be hosted on [zynh.me](https://zynh.me/)
 
-Next blog post will be about optimizing the workflow of adding posts, so that I'm not
-having to manually name, and format these markdown documents, as well as automatically
-interacting with the git repo.
+Next blog post will be about optimizing the workflow of adding posts, so that
+I'm not having to manually name, and format these markdown documents, as well
+as automatically interacting with the git repo.
 
 ### Resources
 
