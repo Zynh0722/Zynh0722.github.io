@@ -30,7 +30,7 @@ const {
 				/>
 			)}
 			<h1 class="title">{title}</h1>
-			{pubDate && <time>{pubDate}</time>}
+			{pubDate ? <time>{pubDate}</time> : <div class="time">Draft</div>}
 			{author && <span>· </span><i class="author">{author}</i>}
 			{updatedDate && <div>Last updated on <time>{updatedDate}</time></div>}
 			<hr/>
@@ -42,4 +42,7 @@ const {
 	.author {
 		filter: brightness(200%);
 	}
+  .time {
+    display: inline;
+  }
 </style>
