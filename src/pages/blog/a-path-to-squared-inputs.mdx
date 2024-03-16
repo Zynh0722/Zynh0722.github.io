@@ -53,15 +53,24 @@ As frc has evolved, so have our drive systems. Modern frc has settled largely
 on two predominant platforms, skid steer/WCD, and Swerve drive thanks to the
 advent of COTS swerve modules
 
-while once swerve was a mere idea, suddenly it was on a robot and needed to be
+While once swerve was a mere idea, suddenly it was on a robot and needed to be
 programmed. As this isn't a swerve programming post (A project for another
-day), I will skip by implementing a swerve drive part of this process, and
+day), I will skip the implementation of a swerve drive, and
 instead look merely at how we control it.
 
 ### Our new Axis! {/* <!-- markdownlint-disable-line --> */}
 
-Talk about the 3 input axis necessary for controlling a swerve drive, and what
-that looks like on a gamepad
+When controlling a Tank Drive robot, you have only 2 axes, forward and rotation.
+However with a Swerve Drive robot, there is an additional axis. We have to
+control forward, sideways, and rotation.
+
+The gamepad control scheme my team went with, and I'd guess nearly every gamepad
+team uses, uses the left joystick to represent the translation axes (forward and
+sideways) and the right joysticks horizontal movement representing rotation.
+
+You may have noticed this layout is just Arcade drive, but we also include the
+horizontal axis of the left joystick. This proved rather convenient for learning
+to drive Swerve drive.
 
 ```html
 <!-- TODO: Visualize 3 axis control on a gamepad -->
@@ -69,7 +78,8 @@ that looks like on a gamepad
 
 ### Don't forget about our dearest squared inputs
 
-Walk brazenly into the naive squared swerve inputs
+And of course mere moments after testing our first working swerve
+implementation,
 
 ## The problem
 
