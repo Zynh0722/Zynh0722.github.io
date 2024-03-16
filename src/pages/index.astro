@@ -2,17 +2,19 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import Layout from "@layouts/Layout.astro";
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "src/config";
+
+const content = {
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+};
 ---
 
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header title={SITE_TITLE} />
-    <main>
+<Layout content={content}>    
+  <main>
+    <article>
       <h1>🧙‍♀️ Hail Traveler!</h1>
       <p>
         Here lies a repository of the shenanigans and machinations of me! Zynh!
@@ -53,12 +55,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
         Have fun! If you get stuck or want me to add something,
         <a href="mailto:Zynh0722@gmail.com">toss me an email</a>.
       </p>
-    </main>
-    <Footer />
-  </body><style>
-    h1 {
-      text-align: center;
-    }
-  </style>
-</html>
+    </article>
+  </main>
+</Layout>
 
+<style>
+  h1 {
+    text-align: center;
+  }
+</style>

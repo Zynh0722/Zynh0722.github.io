@@ -1,88 +1,86 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import BaseHead from "@components/BaseHead.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Layout from "@layouts/Layout.astro";
 
 import sortBy from "@lib/byDate";
 
-import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import { SITE_TITLE, SITE_DESCRIPTION } from "src/config";
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
 const posts = (await Astro.glob("./blog/*.{md,mdx}"))
   .filter((post) => !post.frontmatter.draft || import.meta.env.DEV)
   .sort(sortBy);
+
+
+const content = {
+  title: `Post Index - ${SITE_TITLE}`,
+  description: SITE_DESCRIPTION,
+};
 ---
 
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <style>
-      ul {
-        list-style-type: none;
-        padding: unset;
-      }
-      ul li {
-        display: flex;
-      }
-      ul li time,
-      .published {
-        flex: 0 0 130px;
-        font-style: italic;
-        color: #888;
-      }
-      ul li a:visited {
-        color: #8e32dc;
-      }
-    </style>
-  </head>
-  <body>
-    <Header />
-    <main>
-      <content>
-        <ul>
-          {
-            posts.map(
-              ({
-                url,
-                frontmatter: { pubDate, title, readTime, draft },
-              }: any) => (
-                <li>
-                  {!draft ? (
-                    <time datetime={pubDate}>
-                      {new Date(pubDate).toLocaleDateString("en-us", {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                      })}
-                    </time>
-                  ) : (
-                    <div class="published">Draft</div>
-                  )}
-                  <a href={url}>{title}</a>
-                  <div class="time-to-read">
-                    <time>{readTime.text}</time>
-                  </div>
-                </li>
-              )
+<Layout content={content}>
+  <main>
+    <content>
+      <ul>
+        {
+          posts.map(
+            ({
+              url,
+              frontmatter: { pubDate, title, readTime, draft },
+            }: any) => (
+              <li>
+                {!draft ? (
+                  <time datetime={pubDate}>
+                    {new Date(pubDate).toLocaleDateString("en-us", {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    })}
+                  </time>
+                ) : (
+                  <div class="published">Draft</div>
+                )}
+                <a href={url}>{title}</a>
+                <div class="time-to-read">
+                  <time>{readTime.text}</time>
+                </div>
+              </li>
             )
-          }
-        </ul>
-      </content>
-      <Footer />
-    </main>
-    <style>
-      .time-to-read {
-        display: flex;
-        justify-content: flex-end;
-        flex-grow: 1;
-      }
-
-      @media only screen and (max-width: 640px) {
-        .time-to-read {
-          display: none;
+          )
         }
-      }
-    </style>
-  </body>
-</html>
+      </ul>
+    </content>
+  </main>
+</Layout>
+
+<style>
+  .time-to-read {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+  }
+
+  @media only screen and (max-width: 640px) {
+    .time-to-read {
+      display: none;
+    }
+  }
+  ul {
+    list-style-type: none;
+    padding: unset;
+  }
+  ul li {
+    display: flex;
+  }
+  ul li time,
+  .published {
+    flex: 0 0 130px;
+    font-style: italic;
+    color: #888;
+  }
+  ul li a:visited {
+    color: #8e32dc;
+  }
+</style>
