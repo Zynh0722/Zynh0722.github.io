@@ -2,16 +2,16 @@
   Import font for code blocks
  */
 @font-face {
-	font-family: 'JetBrainsMono-Regular';
-	src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
-	font-weight: normal;
-	font-style: normal;
+  font-family: "JetBrainsMono-Regular";
+  src: url("/fonts/JetBrainsMono-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @media screen and (min-width: 640px), (prefers-reduced-motion) {
-	html {
-		scroll-behavior: smooth;
-	}
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /*
@@ -19,17 +19,17 @@
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
- body {
-	font-family: Verdana, sans-serif;
-	margin: auto;
-	padding: 20px;
-	max-width: 65ch;
-	text-align: left;
-	background-color: #fff;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	line-height: 1.5;
-	color: #444;
+body {
+  font-family: Verdana, sans-serif;
+  margin: auto;
+  padding: 20px;
+  max-width: 65ch;
+  text-align: left;
+  background-color: #fff;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  color: #444;
 }
 
 h1,
@@ -40,75 +40,77 @@ h5,
 h6,
 strong,
 b {
-	color: #222;
+  color: #222;
 }
 
 a {
-	color: #3273dc;
+  color: #3273dc;
 }
 
 nav a {
-	margin-right: 10px;
+  margin-right: 10px;
 }
 
 textarea {
-	width: 100%;
-	font-size: 16px;
+  width: 100%;
+  font-size: 16px;
 }
 
 input {
-	font-size: 16px;
+  font-size: 16px;
 }
 
 content {
-	line-height: 1.6;
+  line-height: 1.6;
 }
 
 table {
-	width: 100%;
+  width: 100%;
 }
 
 img {
-	max-width: 100%;
-	height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
-pre, :not(pre) > code {
-	font-family: 'JetBrainsMono-Regular';
-	font-size: 14px;
-	font-variant-ligatures: none;
+pre,
+:not(pre) > code {
+  font-family: "JetBrainsMono-Regular";
+  font-size: 14px;
+  font-variant-ligatures: none;
 }
 
 pre {
-	padding: 1rem;
-	border-radius: 10px;
+  padding: 1rem;
+  border-radius: 10px;
 }
 
 code {
-	padding: 2px 5px;
-	background-color: #f2f2f2;
+  padding: 2px 5px;
+  background-color: #f2f2f2;
 }
 
 :not(pre) > code {
-	border-radius: 5px;
+  border-radius: 5px;
 }
 
 pre > code {
-	all: unset;
+  all: unset;
 }
 
 blockquote {
-	border: 1px solid #999;
-	color: #222;
-	padding: 2px 0px 2px 20px;
-	margin: 0px;
-	font-style: italic;
+  border: 1px solid #999;
+  color: #222;
+  padding: 2px 0px 2px 20px;
+  margin: 0px;
+  font-style: italic;
 }
 .title {
-	font-size: 2em;
-	margin: 0.25em 0 0;
+  font-size: 2em;
+  margin: 0.25em 0 0;
 }
 hr {
-	  border-top: 1px solid #DDD;
-	margin: 1rem 0;
+  border-top: 1px solid #ddd;
+  margin: 1rem 0;
 }
+
