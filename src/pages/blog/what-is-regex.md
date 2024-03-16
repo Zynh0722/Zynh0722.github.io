@@ -8,23 +8,24 @@ author: Zynh Ludwig
 ---
 
 Regex, or Regular Expressions are patterns used to match character combinations
-in strings. In Javascript we can use these patterns in a variety of methods in the `RegExp` and `String`
-objects
+in strings. In Javascript we can use these patterns in a variety of methods in
+the `RegExp` and `String` objects
 
-But a high level definition isn't helpful to anyone, so let's look at how we make a regular expression;
+But a high level definition isn't helpful to anyone, so let's look at how we
+make a regular expression;
 
 - Regular Expression Literal:
 
 ```js
 const re = /ab+c/; // Compiled at script load time.
-                   // These perform the best, but can't be changed
+// These perform the best, but can't be changed
 ```
 
 - You can also construct a `RegExp` object:
 
 ```js
 const re = new RegExp("ab+c"); // These are compiled at runtime
-                        // These perform a bit worse, but can be changed.
+// These perform a bit worse, but can be changed.
 ```
 
 <br />
@@ -167,5 +168,7 @@ use it!
 ### Resources
 
 [RegExr](https://regexr.com/) - An amazing tool for creating regex strings\
-[MDN Regex Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) - MDNs own docs for using regex with javascript\
+[MDN Regex Docs][1] - MDNs own docs for using regex with javascript\
 [JSFiddle with all of the above code](https://jsfiddle.net/zynh0722/rfqghpyz/19/)
+
+[1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
