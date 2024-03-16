@@ -25,7 +25,8 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}"))
       ul li {
         display: flex;
       }
-      ul li time {
+      ul li time,
+      .published {
         flex: 0 0 130px;
         font-style: italic;
         color: #888;
@@ -42,15 +43,22 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}"))
         <ul>
           {
             posts.map(
-              ({ url, frontmatter: { pubDate, title, readTime } }: any) => (
+              ({
+                url,
+                frontmatter: { pubDate, title, readTime, draft },
+              }: any) => (
                 <li>
-                  <time datetime={pubDate}>
-                    {new Date(pubDate).toLocaleDateString("en-us", {
-                      year: "numeric",
-                      month: "short",
-                      day: "numeric",
-                    })}
-                  </time>
+                  {!draft ? (
+                    <time datetime={pubDate}>
+                      {new Date(pubDate).toLocaleDateString("en-us", {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                      })}
+                    </time>
+                  ) : (
+                    <div class="published">Draft</div>
+                  )}
                   <a href={url}>{title}</a>
                   <div class="time-to-read">
                     <time>{readTime.text}</time>
@@ -63,17 +71,18 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}"))
       </content>
       <Footer />
     </main>
-  </body><style>
-    .time-to-read {
-      display: flex;
-      justify-content: flex-end;
-      flex-grow: 1;
-    }
-
-    @media only screen and (max-width: 640px) {
+    <style>
       .time-to-read {
-        display: none;
+        display: flex;
+        justify-content: flex-end;
+        flex-grow: 1;
       }
-    }
-  </style>
+
+      @media only screen and (max-width: 640px) {
+        .time-to-read {
+          display: none;
+        }
+      }
+    </style>
+  </body>
 </html>
