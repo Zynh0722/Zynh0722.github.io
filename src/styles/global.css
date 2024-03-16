@@ -21,16 +21,30 @@
  */
 body {
   font-family: Verdana, sans-serif;
-  margin: auto;
-  padding: 20px;
-  padding-left: calc(100vw - 100% + 20px);
-  max-width: 65ch;
+  display: grid;
+  grid-template-columns:
+    [full-start]
+    1fr
+    [breakout-start]
+    minmax(0, 50px)
+    [content-start] 20px minmax(10ch, 65ch) 20px [content-end]
+    minmax(0, 50px)
+    [breakout-end]
+    1fr
+    [full-end];
+  padding: 0;
+  padding-left: calc(100vw - 100%);
+  margin: 0;
   text-align: left;
   background-color: #fff;
   word-wrap: break-word;
   overflow-wrap: break-word;
   line-height: 1.5;
   color: #444;
+}
+
+body > * {
+  grid-column: content;
 }
 
 h1,
@@ -49,7 +63,7 @@ a {
 }
 
 nav a {
-  margin-right: 10px;
+  padding-right: 10px;
 }
 
 textarea {
@@ -84,11 +98,13 @@ pre,
 pre {
   padding: 1rem;
   border-radius: 10px;
+  grid-column: breakout;
 }
 
 code {
   padding: 2px 5px;
   background-color: #f2f2f2;
+  grid-column: breakout;
 }
 
 :not(pre) > code {
@@ -108,7 +124,7 @@ blockquote {
 }
 .title {
   font-size: 2em;
-  margin: 0.25em 0 0;
+  margin: 0;
 }
 hr {
   border-top: 1px solid #ddd;

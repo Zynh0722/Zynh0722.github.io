@@ -20,7 +20,7 @@ const {
 
 <Layout content={content}>
 	<main>
-		<article>
+		<article class="article">
 			{heroImage && (
 				<img
 					width={720}
@@ -44,5 +44,23 @@ const {
 	}
   .time {
     display: inline;
+  }
+  main {
+    grid-column: full;
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+  article {
+    grid-column: full;
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+</style>
+<style is:global>
+  .article > * {
+    grid-column: content;
+  }
+  .article > pre {
+    grid-column: breakout
   }
 </style>
