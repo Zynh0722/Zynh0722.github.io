@@ -2,7 +2,7 @@
 title: "Atelier Frontend"
 ---
 
-![Image of the atelier frontend](https://camo.githubusercontent.com/b1b29ac29b4375c47ff5b5314e71c23e4edc551fb339b1f0701754b9a4e8d146/68747470733a2f2f692e696d6775722e636f6d2f684430316575772e676966)
+![Image of the atelier frontend](https://camo.githubusercontent.com/3451fe8d40cd3bb8cf0cca9edee85c091d79e6aaeab29320c68b437aa7a66ca0/68747470733a2f2f692e696d6775722e636f6d2f684430316575772e676966)
 
 Working on a team of 4 software engineers, this project is a prototype frontend storefront, capable of displaying products, taking user submitted questions and answers, as well as user submitted reviews with dynamic product specific feature ratings.
 
