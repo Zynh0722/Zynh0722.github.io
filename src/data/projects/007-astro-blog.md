@@ -20,4 +20,3 @@ the p5 Sketches. I made a concession in regards to the sites lack of JS entirely
 to remove the glass window between the code you see and the visualizations you see.
 As such all of the animations that I made not only are running live in your browser,
 but also all of them are clickable and link directly to their actual source code.
-
