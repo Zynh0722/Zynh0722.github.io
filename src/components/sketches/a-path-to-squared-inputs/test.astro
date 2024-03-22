@@ -1,0 +1,80 @@
+---
+const id = "test";
+---
+
+<a>
+  <test id={id}></test>
+</a>
+
+<style>
+  test {
+    display: flex;
+    justify-content: center;
+
+    border-radius: 1em;
+    border: solid black;
+    overflow: hidden;
+  }
+</style>
+
+<script>
+  const id = "test";
+  import P5 from "p5";
+  class JoystickVisual {
+    private p5: P5;
+    pos: P5.Vector;
+    size: number;
+    value: P5.Vector;
+
+    constructor(p5: P5) {
+      this.pos = p5.createVector(300, 100);
+      this.size = 100;
+      this.value = p5.createVector(0, 0);
+
+      this.p5 = p5;
+    }
+
+    draw() {
+      const p5 = this.p5;
+      p5.push();
+      p5.translate(this.pos.x, this.pos.y);
+
+      p5.strokeWeight(this.size * 0.075);
+      p5.fill(255);
+      p5.circle(0, 0, this.size);
+
+      p5.strokeWeight(0);
+
+      const innerSize = this.size * 0.9;
+
+      p5.fill(75);
+      p5.circle(0, 0, innerSize);
+
+      p5.fill(0);
+      p5.circle(0, 0, innerSize * 0.8);
+
+      p5.pop();
+    }
+  }
+
+  class Test extends HTMLElement {
+    canvas: any;
+
+    constructor() {
+      super();
+
+      new P5((p5: P5) => {
+        p5.setup = () => {
+          const canvas = p5.createCanvas(600, 200);
+        };
+
+        p5.draw = () => {
+          p5.background("white");
+
+          let visual = new JoystickVisual(p5);
+          visual.draw();
+        };
+      }, this);
+    }
+  }
+</script>
