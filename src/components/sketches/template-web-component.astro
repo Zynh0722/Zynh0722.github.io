@@ -1,0 +1,39 @@
+<a>
+  <js-sketch></js-sketch>
+</a>
+
+<style>
+  js-sketch {
+    display: flex;
+    justify-content: center;
+
+    border-radius: 1em;
+    border: solid black;
+    overflow: hidden;
+  }
+</style>
+
+<script>
+  import P5 from "p5";
+
+  class Sketch extends HTMLElement {
+    constructor() {
+      super();
+
+      const sketch = (p5: P5) => {
+        p5.setup = () => {
+          const canvas = p5.createCanvas(600, 200);
+        };
+
+        p5.draw = () => {
+          p5.background("white");
+          console.log("test");
+        };
+      };
+
+      new P5(sketch, this);
+    }
+  }
+
+  customElements.define("sketch", Sketch);
+</script>
