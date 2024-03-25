@@ -1,13 +1,9 @@
----
-const id = "test";
----
-
 <a>
-  <test id={id}></test>
+  <p5-sketch></p5-sketch>
 </a>
 
 <style>
-  test {
+  p5-sketch {
     display: flex;
     justify-content: center;
 
@@ -57,9 +53,7 @@ const id = "test";
     }
   }
 
-  class Test extends HTMLElement {
-    canvas: any;
-
+  class Sketch extends HTMLElement {
     constructor() {
       super();
 
@@ -77,4 +71,6 @@ const id = "test";
       }, this);
     }
   }
+
+  customElements.define("p5-sketch", Sketch);
 </script>
