@@ -14,7 +14,6 @@
 </style>
 
 <script>
-  const id = "test";
   import P5 from "p5";
   class JoystickVisual {
     private p5: P5;
@@ -22,10 +21,10 @@
     size: number;
     value: P5.Vector;
 
-    constructor(p5: P5) {
+    constructor(p5: P5, value?: P5.Vector) {
       this.pos = p5.createVector(300, 100);
       this.size = 100;
-      this.value = p5.createVector(0, 0);
+      this.value = value || p5.createVector(0, 0);
 
       this.p5 = p5;
     }
@@ -40,6 +39,11 @@
       p5.circle(0, 0, this.size);
 
       p5.strokeWeight(0);
+
+      const scaler = this.size * 0.25;
+      const scaledX = this.value.x * scaler;
+      const scaledY = this.value.y * scaler;
+      p5.translate(scaledX, scaledY);
 
       const innerSize = this.size * 0.9;
 
@@ -58,15 +62,19 @@
       super();
 
       new P5((p5: P5) => {
+        const visual = new JoystickVisual(p5, p5.createVector(1, 0));
+
         p5.setup = () => {
           const canvas = p5.createCanvas(600, 200);
+          p5.angleMode(p5.DEGREES);
         };
 
         p5.draw = () => {
           p5.background("white");
 
-          let visual = new JoystickVisual(p5);
           visual.draw();
+
+          visual.value.rotate(1);
         };
       }, this);
     }
