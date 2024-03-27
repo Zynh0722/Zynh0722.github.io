@@ -43,6 +43,8 @@ class JoystickVisual {
 }
 
 class Sketch extends HTMLElement {
+  canvas: P5.Renderer | undefined;
+
   constructor() {
     super();
 
@@ -50,7 +52,7 @@ class Sketch extends HTMLElement {
       const visual = new JoystickVisual(p5, p5.createVector(1, 0));
 
       p5.setup = () => {
-        const canvas = p5.createCanvas(600, 200);
+        this.canvas = p5.createCanvas(600, 200);
         p5.angleMode(p5.DEGREES);
       };
 
